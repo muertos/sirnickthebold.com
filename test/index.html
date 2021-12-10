@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>JavaScript MouseOver Test</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #ffffff;
+    }
+    canvas {
+      border: .2em solid black;
+      height: 90vh;
+    }
+    table {
+        border: .2em solid black;
+    }
+    th {
+        border: .2em solid green;
+    }
+  </style>
+  <script>
+      // How can I make it so the following functions always apply to the <th>
+      // tag?
+      function makeGreen(obj) {
+          obj.style.background="green";
+      }
+      function makeWhite(obj) {
+          obj.style.background="white";
+      }
+  </script>
+</head>
+
+<body>
+<script type="text/javascript" src="test.js"></script>
+<table>
+    <tr>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+    </tr>
+    <tr>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+    </tr>
+    <tr>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+        <th onmouseover=makeGreen(this) onmouseout=makeWhite(this)>Item 1</th>
+    </tr>
+</table>
+</body>
+</html>
