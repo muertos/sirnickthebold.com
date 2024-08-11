@@ -1,21 +1,99 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Asteroid</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nick's Games</title>
   <style>
     body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .content-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #228B22; /* Forest green */
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+      -webkit-text-stroke: 2px #c0c0c0; /* Light gray outline for WebKit browsers */
+      text-stroke: 2px #c0c0c0; /* Light gray outline for other browsers */
+    }
+
+    .game-card {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 400px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-card a.latest-release {
+      display: block;
       text-align: center;
-      background-color: #0c56ce;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #00ffff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
-    canvas {
-      border: .2em solid black;
-      height: 90vh;
+
+    .game-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
     }
+
+    .game-card a {
+      display: block;
+      color: #00ffff;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .game-card a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
-
 <body>
-<canvas id="asteroid" width="600" height="600"></canvas>
-<script type="text/javascript" src="asteroid.js"></script>
+
+  <div class="content-wrapper">
+    <h1>Nick's Games</h1>
+
+    <div class="game-card">
+      <h2>Shoot 'em Up</h2>
+      <a href="https://github.com/muertos/shoot-em-up/releases" class="latest-release">Latest Release</a>
+      <img src="https://github.com/muertos/shoot-em-up/blob/main/img/demo.png?raw=true" alt="Shoot 'em Up Screenshot">
+      <p>Download the latest release, extract the zip archive, and execute main.exe.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.game-card img');
+    images.forEach(img => {
+      img.addEventListener('mouseover', () => {
+        img.style.transform = 'scale(1.05)';
+      });
+
+      img.addEventListener('mouseout', () => {
+        img.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+
 </body>
 </html>
